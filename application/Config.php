@@ -1,4 +1,10 @@
 <?php  
+	/**
+	 * Config.php
+	 */
+	/**
+	 * Archivos de configuracion
+	 */
 define("DEFAULT_CONTROLLER", "accounts");  
 define("DEFAULT_LAYOUT", "default");
 

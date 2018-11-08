@@ -1,11 +1,22 @@
+<h2>Editar Categoria</h2>
 
-<form action="<?php echo APP_URL.'categories/update'; ?>" method="POST">
-	<input type="hidden" value="<?php echo $this->category['id']; ?>" name="id">
-	<p>
-		<label for="name">Nombre</label>
-		<input type="text" name="name" value="<?php echo $this->category['name']; ?>">
-	</p>
-	<p>
-		<button type="submit">Guardar</button>
-	</p>
-</form>
+<div class="container">
+	<div class="col-md-12">
+		<form action="<?php 
+		/**
+		 * Editar Cate
+		 * 
+		 * @author Jesus Alberto Puerto Che [jpuertoche@gmail.com]
+		 */
+		echo APP_URL.'categories/update'; ?>" method="POST">
+			<input type="hidden" value="<?php echo $this->category['id']; ?>" name="id" class="form-control" class="form-control">
+			<label for="name">Nombre</label>
+			<div class="input-group">
+				<input type="text" name="name" value="<?php echo $this->category['name']; ?>" class="form-control" class="form-control">
+				<div class="input-group-append">
+					<button class="btn btn-sm btn-success" action="submit">Editar</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

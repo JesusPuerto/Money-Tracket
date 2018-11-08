@@ -1,5 +1,8 @@
 <?php  
 	/**
+	 * categoriesController.php
+	 */
+	/**
 	 * clase que controla las categorias
 	 */
 	class categoriesController extends AppController

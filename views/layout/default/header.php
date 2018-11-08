@@ -4,7 +4,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>MoneyTracking</title>
-	<link rel="stylesheet" href="<?php echo APP_URL_CSS."bootstrap.min.css"; ?>">
+	<link rel="stylesheet" href="<?php
+		/**
+		 * header.php
+		 */
+	 echo APP_URL_CSS."bootstrap.min.css"; ?>">
 	<link rel="stylesheet" href="<?php echo APP_URL_CSS."font-awesome/css/all.css"; ?>">
 	<link rel="stylesheet" href="<?php echo APP_URL_CSS."style.css"; ?>">
 </head>

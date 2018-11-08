@@ -2,7 +2,13 @@
 
 <div class="container">
 	<div class="col-md-12">
-		<form action="<?php echo APP_URL.'categories/update'; ?>" method="POST">
+		<form action="<?php 
+		/**
+		 * Editar Cate
+		 * 
+		 * @author Jesus Alberto Puerto Che [jpuertoche@gmail.com]
+		 */
+		echo APP_URL.'categories/update'; ?>" method="POST">
 			<input type="hidden" value="<?php echo $this->category['id']; ?>" name="id" class="form-control" class="form-control">
 			<label for="name">Nombre</label>
 			<div class="input-group">

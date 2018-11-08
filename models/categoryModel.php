@@ -1,5 +1,7 @@
 <?php 
-
+	/**
+	 * categoryModel.php
+	 */
 	/**
 	 * Clase de modelo
 	 */

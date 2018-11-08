@@ -1,6 +1,12 @@
-<?php  
+<?php 
+	/**
+	 * archivo Database.php
+	 * 
+	 */
 	/**
 	 * Clase de conexión de la BD
+	 * 
+	 * 
 	 */
 	class Database extends PDO
 	{

@@ -1,7 +1,11 @@
 <h2>Agregar Cuenta</h2>
 <div class="container">
 	<div class="col-md-12">
-		<form action="<?php echo APP_URL.'accounts/add'; ?>" method="POST">
+		<form action="<?php 
+		/**
+		 * add.phtml
+		 */
+		echo APP_URL.'accounts/add'; ?>" method="POST">
 			<label for="nombre">Nombre</label>
 			<div class="input-group">			
 				<input type="text" name="name" class="form-control">

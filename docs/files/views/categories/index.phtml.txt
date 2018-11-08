@@ -1,10 +1,16 @@
-
-<a href="<?php echo APP_URL.'categories/add'; ?>">
-	<button>Agregar</button>	
+<h3>Listado de Categorias</h3>
+<a href="<?php
+	/**
+	 * index.phtml
+	 */
+ echo APP_URL.'categories/add'; ?>">
+	<button type="button" class="btn btn-success">
+	<i class="glyphicon glyphicon-plus"></i>
+	Agregar</button>	
 </a>
 <?php if (!empty($this->categories)): ?>
-	<table>
-		<thead>
+	<table class="table table-sm mg-top-10">
+		<thead class="thead-light">
 			<tr>
 				<th>Nombre</th>
 				<th>Opciones</th>
@@ -18,13 +24,13 @@
 					</td>
 					<td>
 						<a href="<?php echo APP_URL.'categories/update/'.$category['id']; ?>">
-							<button>
-								Actualizar
+							<button class="btn btn-sm btn-primary">
+								<i class="glyphicon glyphicon-pencil"></i>
 							</button>
 						</a>
 						<a href="<?php echo APP_URL.'categories/delete/'.$category['id']; ?>">
-							<button>
-								Eliminar
+							<button class="btn btn-sm btn-danger confirmation">
+								<i class="glyphicon glyphicon-trash"></i>
 							</button>
 						</a>
 					</td>

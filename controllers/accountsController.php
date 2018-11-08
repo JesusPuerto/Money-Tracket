@@ -1,4 +1,7 @@
-<?php  
+<?php 
+	/**
+	 * accountsController.php
+	 */
 	/**
 	 * Clase que controla las cuentas
 	 */

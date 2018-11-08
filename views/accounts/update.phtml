@@ -1,8 +1,13 @@
+
 <h2>Editar Tarea</h2>
 
 <div class="container">
 	<div class="col-md-12">
-		<form action="<?php echo APP_URL.'accounts/update'; ?>" method="POST">
+		<form action="<?php 
+		/**
+		 * update.phtml
+		 */
+		echo APP_URL.'accounts/update'; ?>" method="POST">
 			<input type="hidden" value="<?php echo $this->account['id']; ?>" name="id" class="form-control">
 			<label for="nombre">Nombre</label>
 			<div class="input-group">			

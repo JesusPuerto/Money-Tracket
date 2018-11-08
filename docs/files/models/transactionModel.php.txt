@@ -1,5 +1,8 @@
 <?php 
 	/**
+	 * transactionModel.php
+	 */
+	/**
 	 * clase de transacciones
 	 */
 	class transactionModel extends AppModel

@@ -1,5 +1,8 @@
 <?php
 	/**
+	 * transactionsController.php
+	 */
+	/**
 	 * Clase de controlador de Transacciones
 	 */
 	class transactionsController extends AppController

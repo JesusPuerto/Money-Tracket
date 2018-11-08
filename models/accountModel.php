@@ -1,4 +1,7 @@
-<?php  
+<?php
+	/**
+	 * accontModel.php
+	 */
 	/**
 	 * clase del modelo cuenta
 	 */

@@ -1,9 +1,19 @@
-<a href="<?php echo APP_URL.'transactions/add'; ?>">
-	<button>Agregar</button>
+<h3>Listado de Transacciones</h3>
+<a href="<?php 
+	/**
+	 * index.phtml
+	 */
+echo APP_URL.'transactions/add'; ?>">
+	<button type="button" class="btn btn-success">
+	<i class="glyphicon glyphicon-plus"></i>
+	Agregar</button>
 </a>
 <?php if (!empty($this->transactions)): ?>
-	<table border="1">
-		<thead>
+	<table class="table table-sm mg-top-10">
+		<?php 
+			$Ingresos=0; $Balance =0; $Egresos=0;
+		 ?>
+		<thead "thead-light">
 			<tr>
 				<th>Cuenta</th>
 				<th>Categoria</th>
@@ -26,26 +36,75 @@
 						<?php echo $transaction['description']; ?>
 					</td>
 					<td>
-						<?php echo $transaction['date']; ?>
+						
+						<?php 
+						$date = date_create($transaction['date']);
+						echo date_format($date,'d/m/Y');
+						?>
 					</td>
 					<td>
-						<?php echo $transaction['amount']; ?>
+						<?php 
+								if($transaction['amount']<0)
+								{
+									$Egresos+=(-$transaction['amount']);
+									echo "<span class='text-danger'><strong>$".number_format($transaction['amount'],2)."</strong></span>";
+									//echo "<span class='text-danger'>"."$".$transaction['amount'].".00"."</span>";
+								}
+							 	elseif ($transaction['amount'>=0]) {
+							 		$Ingresos+=($transaction['amount']);
+							 		echo "<span class='text-success'><strong>$".number_format($transaction['amount'],2)."</strong></span>";
+							 			//echo "<span class='text-success'>"."$".$transaction['amount'].".00"."</span>";
+							 		}	
+						?>
 					</td>
 					<td>	
 						<a href="<?php echo APP_URL.'transactions/update/'.$transaction['id']; ?>">
-							<button>
-								Editar
+							<button class="btn btn-sm btn-primary">
+								<i class="glyphicon glyphicon-pencil"></i>
 							</button>
 						</a>
 						<a href="<?php echo APP_URL.'transactions/delete/'.$transaction['id']; ?>">
-							<button>
-								Eliminar
+							<button class="btn btn-sm btn-danger confirmation">
+								<i class="glyphicon glyphicon-trash"></i>
 							</button>
 						</a>
 					</td>
 				</tr>
 			<?php endforeach ?>
 		</tbody>
+		<tfoot>
+			<tr>
+				<th colspan="4" class="text-right">Total de Ingresos</th>
+				<th>
+					<?php 
+						echo $Ingresos;
+					 ?>
+				</th>
+				<th></th>
+			</tr>
+			<tr>
+				<th colspan="4" class="text-right">Total de Ingresos</th>
+				<th>
+					<?php 
+						echo $Egresos
+					 ?>
+				</th>
+				<th>
+					
+				</th>
+			</tr>
+			<tr>
+				<th colspan="4" class="text-right">Total de Ingresos</th>
+				<th>
+					<?= ($Ingresos-$Egresos)
+
+					 ?>
+				</th>
+				<th>
+					
+				</th>
+			</tr>	
+		</tfoot>
 	</table>	
 <?php else: ?>
 	<div>

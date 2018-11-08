@@ -1,5 +1,8 @@
 <?php  
 	/**
+	 * View.php
+	 */
+	/**
 	 * clase de la vista
 	 */
 	class View

@@ -1,33 +1,49 @@
-<form action="<?php echo APP_URL.'transactions/add'; ?>" method="POST">
-	<p>
-		<label for="id_account">Cuenta</label>
-		<select name="id_account">
-			<?php foreach ($this->accounts as $account): ?>
+<h2>Agregar Transacciones</h2>
+
+<div class="container">
+	<div class="col-md-6 mx-auto">
+		<form class="form form-group" action="<?php
+		/**
+		 * add.phtml
+		 */
+		 echo APP_URL.'transactions/add'; ?>" method="POST">
+			
+			<div class="form-group">
+				<label for="nombre">Nombre</label>
+				<input type="text" name="nombre" class="form-control">
+			</div>
+
+			<label for="id_account">Cuenta</label>
+			<select name="id_account" class="form-control">
+				<?php foreach ($this->accounts as $account): ?>
+
 				<?php echo "<option value='".$account['id']."'>".$account['name']."</option>"; ?>
-			<?php endforeach ?>
-		</select>
-	</p>
-	<p>
-		<label for="id_category">Categoria</label>
-		<select name="id_category">
-			<?php foreach ($this->categories as $category): ?>
+
+				<?php endforeach ?>
+			</select>
+
+			<p></p>
+			<label for="id_category">Categoria</label>
+			<select name="id_category">
+				<?php foreach ($this->categories as $category): ?>
+
 				<?php echo "<option value='".$category['id']."''>".$category['name']."</option>"; ?>
-			<?php endforeach ?>
-		</select>
-	</p>
-	<p>
-		<label for="date">Fecha</label>
-		<input type="date" name="date" value="<?php echo date('Y-m-d'); ?>">
-	</p>
-	<p>
-		<label for="description">Descripcion</label>
-		<input type="text" name="description">
-	</p>
-	<p>
-		<label for="amount">Monto</label>
-		<input type="text" name="amount">
-	</p>
-	<p>
-		<button type="submit">Guardar</button>
-	</p>
-</form>
+
+				<?php endforeach ?>
+			</select>
+			
+			<p></p>
+			<label for="date">Fecha</label>
+			<input type="date" name="date" value="<?php echo date('Y-m-d'); ?>" class="form-control">
+
+			<label for="description">Descripcion</label>
+		    <input type="text" name="description" class="form-control">
+
+		    <label for="amount">Monto</label>
+		   <input type="text" name="amount" class="form-control">
+
+			<button type="submit" class="btn btn-primary">Guardar</button>
+		</form>
+	</div>
+</div>
+

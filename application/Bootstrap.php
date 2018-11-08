@@ -1,4 +1,8 @@
 <?php  
+
+	/**
+	 * Boostrap.php
+	 */
 	/**
 	 * clase que controla el boostrap
 	 */

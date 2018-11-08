@@ -1,5 +1,8 @@
 <?php 
 	/**
+	 * Model.php
+	 */
+	/**
 	 * Clase modelo de la aplicacion
 	 */
 	class AppModel

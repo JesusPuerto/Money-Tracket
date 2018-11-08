@@ -2,7 +2,11 @@
 
 <div class="container">
 	<div class="col-sm-12 col-md-6 mx-auto">
-		<form action="<?php echo APP_URL.'transactions/update'; ?>" method="POST">
+		<form action="<?php 
+		/**
+		 * update.phtml
+		 */
+		echo APP_URL.'transactions/update'; ?>" method="POST">
 			<input type="hidden" name="id" value="<?php echo $this->transaction['id']; ?>" class="form-control">
 				<div class="form-group">
 				<label for="id_account">Cuenta</label>
