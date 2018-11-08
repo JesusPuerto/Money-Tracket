@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h3>Listado de Transacciones</h3>
 <a href="<?php 
 	/**
@@ -110,4 +111,77 @@ echo APP_URL.'transactions/add'; ?>">
 	<div>
 		No hay registros
 	</div>
+=======
+<h3>Listado de Transacciones</h3>
+<a href="<?php echo APP_URL.'transactions/add'; ?>">
+	<button type="button" class="btn btn-success">
+	<i class="glyphicon glyphicon-plus"></i>
+	Agregar</button>
+</a>
+<?php if (!empty($this->transactions)): ?>
+	<table class="table table-sm mg-top-10">
+		<thead "thead-light">
+			<tr>
+				<th>Cuenta</th>
+				<th>Categoria</th>
+				<th>Descripcion</th>
+				<th>Fecha</th>
+				<th>Monto</th>
+				<th>Opciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach ($this->transactions as $transaction): ?>
+				<tr>
+					<td>
+						<?php echo $transaction['nameaccount']; ?>
+					</td>
+					<td>
+						<?php echo $transaction['namecategory']; ?>
+					</td>
+					<td>
+						<?php echo $transaction['description']; ?>
+					</td>
+					<td>
+						
+						<?php 
+						$date = date_create($transaction['date']);
+						echo date_format($date,'d/m/Y');
+						?>
+					</td>
+					<td>
+						<?php 
+								if($transaction['amount']<0)
+								{
+
+									echo "<span class='text-danger'><strong>$".number_format($transaction['amount'],2)."</strong></span>";
+									//echo "<span class='text-danger'>"."$".$transaction['amount'].".00"."</span>";
+								}
+							 	elseif ($transaction['amount'>=0]) {
+							 		echo "<span class='text-success'><strong>$".number_format($transaction['amount'],2)."</strong></span>";
+							 			//echo "<span class='text-success'>"."$".$transaction['amount'].".00"."</span>";
+							 		}	
+						?>
+					</td>
+					<td>	
+						<a href="<?php echo APP_URL.'transactions/update/'.$transaction['id']; ?>">
+							<button class="btn btn-sm btn-primary">
+								<i class="glyphicon glyphicon-pencil"></i>
+							</button>
+						</a>
+						<a href="<?php echo APP_URL.'transactions/delete/'.$transaction['id']; ?>">
+							<button class="btn btn-sm btn-danger confirmation">
+								<i class="glyphicon glyphicon-trash"></i>
+							</button>
+						</a>
+					</td>
+				</tr>
+			<?php endforeach ?>
+		</tbody>
+	</table>	
+<?php else: ?>
+	<div>
+		No hay registros
+	</div>
+>>>>>>> ad3f4cffa2a5d09d183f4964fedffa2d76d49118
 <?php endif ?>
