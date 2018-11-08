@@ -39,10 +39,13 @@
 						<?php 
 								if($transaction['amount']<0)
 								{
-									echo "<span class='text-danger'>"."$".$transaction['amount'].".00"."</span>";
+
+									echo "<span class='text-danger'><strong>$".number_format($transaction['amount'],2)."</strong></span>";
+									//echo "<span class='text-danger'>"."$".$transaction['amount'].".00"."</span>";
 								}
 							 	elseif ($transaction['amount'>=0]) {
-							 			echo "<span class='text-success'>"."$".$transaction['amount'].".00"."</span>";
+							 		echo "<span class='text-success'><strong>$".number_format($transaction['amount'],2)."</strong></span>";
+							 			//echo "<span class='text-success'>"."$".$transaction['amount'].".00"."</span>";
 							 		}	
 						?>
 					</td>
