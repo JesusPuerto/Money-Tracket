@@ -1,0 +1,54 @@
+<a href="<?php echo APP_URL.'transactions/add'; ?>">
+	<button>Agregar</button>
+</a>
+<?php if (!empty($this->transactions)): ?>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Cuenta</th>
+				<th>Categoria</th>
+				<th>Descripcion</th>
+				<th>Fecha</th>
+				<th>Monto</th>
+				<th>Opciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach ($this->transactions as $transaction): ?>
+				<tr>
+					<td>
+						<?php echo $transaction['nameaccount']; ?>
+					</td>
+					<td>
+						<?php echo $transaction['namecategory']; ?>
+					</td>
+					<td>
+						<?php echo $transaction['description']; ?>
+					</td>
+					<td>
+						<?php echo $transaction['date']; ?>
+					</td>
+					<td>
+						<?php echo $transaction['amount']; ?>
+					</td>
+					<td>	
+						<a href="<?php echo APP_URL.'transactions/update/'.$transaction['id']; ?>">
+							<button>
+								Editar
+							</button>
+						</a>
+						<a href="<?php echo APP_URL.'transactions/delete/'.$transaction['id']; ?>">
+							<button>
+								Eliminar
+							</button>
+						</a>
+					</td>
+				</tr>
+			<?php endforeach ?>
+		</tbody>
+	</table>	
+<?php else: ?>
+	<div>
+		No hay registros
+	</div>
+<?php endif ?>

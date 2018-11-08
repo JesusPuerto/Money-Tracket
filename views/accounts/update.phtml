@@ -1,0 +1,17 @@
+<h2>Editar Tarea</h2>
+
+<div class="container">
+	<div class="col-md-12">
+		<form action="<?php echo APP_URL.'accounts/update'; ?>" method="POST">
+			<input type="hidden" value="<?php echo $this->account['id']; ?>" name="id" class="form-control">
+			<label for="nombre">Nombre</label>
+			<div class="input-group">			
+				<input type="text" name="name" value="<?php echo $this->account['name']; ?>" class="form-control">
+				<div class="input-group-append">
+					<button class="btn btn-sm btn-success" action="submit">Editar</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+

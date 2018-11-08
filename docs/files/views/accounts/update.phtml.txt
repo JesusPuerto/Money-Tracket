@@ -1,0 +1,11 @@
+
+<form action="<?php echo APP_URL.'accounts/update'; ?>" method="POST">
+	<input type="hidden" value="<?php echo $this->account['id']; ?>" name="id">
+	<p>
+		<label for="name">Nombre</label>
+		<input type="text" name="name" value="<?php echo $this->account['name']; ?>">
+	</p>
+	<p>
+		<button type="submit">Guardar</button>
+	</p>
+</form>

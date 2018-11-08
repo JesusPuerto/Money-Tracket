@@ -1,0 +1,9 @@
+<form action="<?php echo APP_URL.'categories/add'; ?>" method="POST">
+	<p>
+		<label for="name">Nombre</label>
+		<input type="text" name="name">
+	</p>
+	<p>
+		<button type="submit">Guardar</button>
+	</p>
+</form>

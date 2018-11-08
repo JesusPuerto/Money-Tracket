@@ -1,0 +1,39 @@
+<h2>Editar Transaccion</h2>
+
+<div class="container">
+	<div class="col-sm-12 col-md-6 mx-auto">
+		<form action="<?php echo APP_URL.'transactions/update'; ?>" method="POST">
+			<input type="hidden" name="id" value="<?php echo $this->transaction['id']; ?>" class="form-control">
+				<div class="form-group">
+				<label for="id_account">Cuenta</label>
+				<select name="id_account" class="form-control">
+					<?php foreach ($this->accounts as $account): ?>
+						<?php echo "<option value='".$account['id']."'>".$account['name']."</option>"; ?>
+					<?php endforeach ?>
+				</select>
+				</div>
+				<label for="id_category">Categoria</label>
+				<select name="id_category" class="form-control">
+					<?php foreach ($this->categories as $category): ?>
+						<?php echo "<option value='".$category['id']."''>".$category['name']."</option>"; ?>				
+					<?php endforeach ?>
+				</select>
+				<div class="form-group">
+				<label for="date">Fecha</label>
+				<input type="date" name="date" value="<?php echo date('Y-m-d'); ?>" value="<?php echo $this->transaction['date']; ?> " class="form-control">
+				</div>
+				<div class="form-group">
+				<label for="description">Descripcion</label>
+				<input type="text" name="description" value="<?php echo $this->transaction['description']; ?>" class="form-control">
+				</div>
+				<div class="form-group">
+				<label for="amount">Monto</label>
+				<input type="text" name="amount" value="<?php echo $this->transaction['amount']; ?>" class="form-control">
+				</div>
+				<div class="form-group">
+					
+				</div>
+				<button type="submit" class="btn btn-sm btn-success">Guardar</button>
+		</form>
+	</div>
+</div>

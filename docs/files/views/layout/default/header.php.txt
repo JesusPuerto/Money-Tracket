@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MoneyTracking</title>
+	<link rel="stylesheet" href="<?php echo APP_URL_CSS."bootstrap.min.css"; ?>">
+</head>
+<body>
+	<nav>
+		<ul>
+			<li>
+				<a href="<?php echo APP_URL.'accounts'; ?>">Cuentas</a>
+			</li>
+			<li>
+				<a href="<?php echo APP_URL.'categories'; ?>">Categorias</a>
+			</li>
+			<li>
+				<a href="<?php echo APP_URL.'transactions'; ?>">Transacciones</a>
+			</li>
+		</ul>
+	</nav>
+
